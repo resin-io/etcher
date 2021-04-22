@@ -10046,6 +10046,15 @@
         "semver-compare": "^1.0.0"
       }
     },
+    "pnp-webpack-plugin": {
+      "version": "1.6.4",
+      "resolved": "https://registry.npmjs.org/pnp-webpack-plugin/-/pnp-webpack-plugin-1.6.4.tgz",
+      "integrity": "sha512-7Wjy+9E3WwLOEL30D+m8TSTF7qJJUJLONBnwQp0518siuMxUQUbgZwssaFX+QKlZkjHZcw/IpZCt/H0srrntSg==",
+      "dev": true,
+      "requires": {
+        "ts-pnp": "^1.1.6"
+      }
+    },
     "polished": {
       "version": "3.7.0",
       "resolved": "https://registry.npmjs.org/polished/-/polished-3.7.0.tgz",
@@ -12581,6 +12590,12 @@
         "source-map-support": "^0.5.17",
         "yn": "3.1.1"
       }
+    },
+    "ts-pnp": {
+      "version": "1.2.0",
+      "resolved": "https://registry.npmjs.org/ts-pnp/-/ts-pnp-1.2.0.tgz",
+      "integrity": "sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==",
+      "dev": true
     },
     "tslib": {
       "version": "2.1.0",
