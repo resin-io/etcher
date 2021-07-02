@@ -1,4 +1,17 @@
 - commits:
+    - subject: Add possibile authorization as a query param
+      hash: 90ee1f49e84a30d81c66f8940d09a18a410b8810
+      body: |
+        Add possibile authorization as a query param
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Andrea Rosci <andrear@balena.io>
+        signed-off-by: Andrea Rosci <andrear@balena.io>
+      author: JSReds
+  version: 1.6.0
+  date: 2021-07-02T12:26:33.371Z
+- commits:
     - subject: Update README to reference Cloudsmith
       hash: 7e333caaf9d94ff90583fe897ccabb6fdf860f74
       body: ''
