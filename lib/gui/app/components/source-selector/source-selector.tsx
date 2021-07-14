@@ -279,6 +279,7 @@ interface SourceSelectorState {
 	showDriveSelector: boolean;
 	defaultFlowActive: boolean;
 	imageSelectorOpen: boolean;
+	imageLoading: boolean;
 }
 
 export class SourceSelector extends React.Component<
@@ -297,6 +298,7 @@ export class SourceSelector extends React.Component<
 			showDriveSelector: false,
 			defaultFlowActive: true,
 			imageSelectorOpen: false,
+			imageLoading: false,
 		};
 
 		// Bind `this` since it's used in an event's callback
@@ -317,10 +319,12 @@ export class SourceSelector extends React.Component<
 	}
 
 	private async onSelectImage(_event: IpcRendererEvent, imagePath: string) {
+		this.setState({ imageLoading: true });
 		await this.selectSource(
 			imagePath,
 			isURL(imagePath) ? sourceDestination.Http : sourceDestination.File,
 		).promise;
+		this.setState({ imageLoading: false });
 	}
 
 	private async createSource(selected: string, SourceType: Source) {
@@ -567,7 +571,12 @@ export class SourceSelector extends React.Component<
 	// TODO add a visual change when dragging a file over the selector
 	public render() {
 		const { flashing } = this.props;
-		const { showImageDetails, showURLSelector, showDriveSelector } = this.state;
+		const {
+			showImageDetails,
+			showURLSelector,
+			showDriveSelector,
+			imageLoading,
+		} = this.state;
 		const selectionImage = selectionState.getImage();
 		let image: SourceMetadata | DrivelistDrive =
 			selectionImage !== undefined ? selectionImage : ({} as SourceMetadata);
@@ -605,16 +614,18 @@ export class SourceSelector extends React.Component<
 						}}
 					/>
 
-					{selectionImage !== undefined ? (
+					{selectionImage !== undefined || imageLoading ? (
 						<>
 							<StepNameButton
 								plain
 								onClick={() => this.showSelectedImageDetails()}
 								tooltip={imageName || imageBasename}
 							>
-								{middleEllipsis(imageName || imageBasename, 20)}
+								<Spinner show={imageLoading}>
+									{middleEllipsis(imageName || imageBasename, 20)}
+								</Spinner>
 							</StepNameButton>
-							{!flashing && (
+							{!flashing && !imageLoading && (
 								<ChangeButton
 									plain
 									mb={14}
@@ -623,7 +634,7 @@ export class SourceSelector extends React.Component<
 									Remove
 								</ChangeButton>
 							)}
-							{!_.isNil(imageSize) && (
+							{!_.isNil(imageSize) && !imageLoading && (
 								<DetailsText>{prettyBytes(imageSize)}</DetailsText>
 							)}
 						</>
