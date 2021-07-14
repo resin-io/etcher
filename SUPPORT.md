@@ -1,5 +1,5 @@
-Getting help with Etcher
-========================
+Getting help with BalenaEtcher
+===============================
 
 There are various ways to get support for Etcher if you experience an issue or
 have an idea you'd like to share with us.
@@ -22,7 +22,7 @@ a look at the existing threads before opening a new one!
 Make sure to mention the following information to help us provide better
 support:
 
-- The Etcher version you're running.
+- The BalenaEtcher version you're running.
 
 - The operating system you're running Etcher in.
 
@@ -32,7 +32,7 @@ support:
 GitHub
 ------
 
-If you encounter an issue or have a suggestion, head on over to Etcher's [issue
+If you encounter an issue or have a suggestion, head on over to BalenaEtcher's [issue
 tracker][issues] and if there isn't a ticket covering it, [create
 one][new-issue].
 
