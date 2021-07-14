@@ -91,7 +91,7 @@ make electron-develop
 
 ```sh
 # Build the GUI
-make webpack
+npm run webpack
 # Start Electron
 npm start
 ```
