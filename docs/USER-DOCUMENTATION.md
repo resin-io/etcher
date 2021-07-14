@@ -159,6 +159,18 @@ pre-installed in all modern Windows versions.
 
 - Run `clean`. This command will completely clean your drive by erasing any
   existent filesystem.
+  
+- Run `create partition primary`. This command will create a new partition.
+
+- Run  `active`. This command will active the partition.
+
+- Run  `list partition`. This command will show available partition.
+
+- Run  `select partition N`, where `N` corresponds to the id of the newly available partition.
+
+- Run `format override quick`. This command will format the partition. You can choose a specific formatting by adding `FS=xx` where `xx` could be `NTFS or FAT or FAT32` after `format`. Example : `format FS=NTFS override quick`
+
+- Run `exit` to quit diskpart.
 
 ### OS X
 
